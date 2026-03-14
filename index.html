@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="hAI.CryptoRiskalyzer – Professionelles AI-gestütztes Tool zur Risikoanalyse von Krypto-Tokens. Honeypot-Detektor, Rug Pull Check, Smart Contract Analyse für ETH, BSC, Polygon, Base & Solana." />
+  <meta name="keywords" content="crypto risk, honeypot detector, rug pull, smart contract audit, token analysis, DeFi security" />
+  <meta property="og:title" content="hAI.CryptoRiskalyzer – Crypto Risk Scanner" />
+  <meta property="og:description" content="Instant Risiko-Score, Honeypot-Detektor, Rug Pull Check, Liquiditäts-Analyse. Multi-Chain: ETH, BSC, Polygon, Base, Solana." />
+  <meta property="og:type" content="website" />
+  <title>hAI.CryptoRiskalyzer – Crypto Risk Scanner</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ==============================
+       HEADER
+       ============================== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">🛡️</div>
+        <span class="logo-text">hAI.<span>Crypto</span>Riskalyzer</span>
+      </a>
+      <div class="header-badge">
+        <span class="dot"></span>
+        Live Analyse · 2026
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="hero">
+    <div class="hero-label">🚀 AI-gestützte Token-Risikoanalyse</div>
+    <h1>Erkenne Crypto-Scams<br>bevor du investierst</h1>
+    <p>
+      Sofort-Risikobewertung mit 6 KI-Analysen: Smart Contract, Liquidität,
+      Wallet-Verteilung, Honeypot-Detektor, Ownership und Trading-Pattern.
+    </p>
+    <div class="feature-badges">
+      <span class="feature-badge"><span class="badge-icon">⚡</span> Instant Risiko-Score 0–100</span>
+      <span class="feature-badge"><span class="badge-icon">🍯</span> Honeypot-Detektor</span>
+      <span class="feature-badge"><span class="badge-icon">💧</span> Rug Pull Check</span>
+      <span class="feature-badge"><span class="badge-icon">📋</span> Smart Contract Audit</span>
+      <span class="feature-badge"><span class="badge-icon">👛</span> Wallet-Konzentration</span>
+      <span class="feature-badge"><span class="badge-icon">🔑</span> Ownership-Analyse</span>
+      <span class="feature-badge"><span class="badge-icon">📊</span> Trading-Pattern</span>
+      <span class="feature-badge"><span class="badge-icon">🌐</span> 5 Blockchains</span>
+    </div>
+  </section>
+
+  <!-- ==============================
+       ANALYZER PANEL
+       ============================== -->
+  <main class="analyzer-panel">
+    <div class="analyzer-card">
+
+      <!-- Chain Selector -->
+      <div class="chain-selector-label">🔗 Blockchain wählen</div>
+      <div class="chain-selector" id="chain-selector" role="radiogroup" aria-label="Blockchain auswählen">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Address Input -->
+      <div class="input-label">
+        📝 Contract-Adresse
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <input
+            type="text"
+            class="address-input"
+            id="address-input"
+            placeholder="0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            aria-label="Contract-Adresse eingeben"
+            aria-describedby="input-error"
+          />
+          <div class="input-error" id="input-error" role="alert"></div>
+        </div>
+        <button class="analyze-btn" id="analyze-btn" aria-label="Token analysieren">
+          <span class="btn-icon">🔍</span>
+          Analysieren
+        </button>
+      </div>
+
+      <!-- Example Addresses -->
+      <div class="example-addresses">
+        <span class="example-label">Beispiele:</span>
+        <span class="example-addr" data-address="0x2170Ed0880ac9A755fd29B2688956BD959F933F8" data-chain="bsc" title="BNB Chain – ETH Token">ETH/BSC</span>
+        <span class="example-addr" data-address="0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82" data-chain="bsc" title="PancakeSwap CAKE">CAKE</span>
+        <span class="example-addr" data-address="0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619" data-chain="polygon" title="Polygon – WETH">MATIC</span>
+        <span class="example-addr" data-address="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v" data-chain="solana" title="Solana USDC">SOL</span>
+        <span class="example-addr" data-address="0x4200000000000000000000000000000000000006" data-chain="base" title="Base WETH">BASE</span>
+      </div>
+
+      <!-- Loading Panel -->
+      <div class="loading-panel" id="loading-panel" role="status" aria-live="polite">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <div style="font-size:14px; color:var(--text-secondary); font-weight:600; margin-bottom:4px;">
+          AI-Analyse läuft...
+        </div>
+        <div style="font-size:12px; color:var(--text-muted);">Echtzeit-Simulation · 6 Kategorien</div>
+        <div class="loading-steps" id="loading-steps"></div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-section" id="results-section" aria-live="polite">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <p style="text-align:center; font-size:11px; color:var(--text-muted); margin-top:16px; line-height:1.6;">
+      ⚠️ Diese Analyse dient nur zu Informationszwecken und stellt keine Anlageberatung dar.<br>
+      Crypto-Investitionen sind hochriskant. Investiere nur, was du verlieren kannst.
+    </p>
+  </main>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="footer">
+    <div class="footer-text">
+      Built by <a href="https://github.com/jbkunama1" target="_blank" rel="noopener noreferrer">jbkunama1</a> ·
+      hAI.CryptoRiskalyzer © 2026 ·
+      <a href="https://github.com/jbkunama1/hAI.CryptoRiskalyzer" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <div class="footer-chains">
+      <span class="footer-chain">⟠ Ethereum</span>
+      <span class="footer-chain">⬡ BSC</span>
+      <span class="footer-chain">⬡ Polygon</span>
+      <span class="footer-chain">🔵 Base</span>
+      <span class="footer-chain">◎ Solana</span>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/analyzer.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
