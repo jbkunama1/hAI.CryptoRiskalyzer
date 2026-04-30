@@ -1,0 +1,133 @@
+name: Daily Market Data Update
+
+on:
+  schedule:
+    # Runs every day at 06:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-market-data:
+    name: Fetch & Commit Market Data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Fear & Greed Index
+        id: fear_greed
+        run: |
+          echo "Fetching Fear & Greed Index..."
+          FEAR_GREED=$(curl -sf "https://api.alternative.me/fng/?limit=1&format=json" || echo '{"data":[{"value":"50","value_classification":"Neutral","timestamp":"0"}]}')
+          echo "fear_greed=$FEAR_GREED" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch CoinGecko trending coins
+        id: trending
+        run: |
+          echo "Fetching trending coins from CoinGecko..."
+          TRENDING=$(curl -sf \
+            -H "Accept: application/json" \
+            "https://api.coingecko.com/api/v3/search/trending" \
+            || echo '{"coins":[]}')
+          echo "trending=$TRENDING" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch top coins by market cap
+        id: top_coins
+        run: |
+          echo "Fetching top 10 coins by market cap..."
+          TOP_COINS=$(curl -sf \
+            -H "Accept: application/json" \
+            "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h" \
+            || echo '[]')
+          echo "top_coins=$TOP_COINS" >> "$GITHUB_OUTPUT"
+
+      - name: Build market-data.json
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          FEAR_GREED='${{ steps.fear_greed.outputs.fear_greed }}'
+          TRENDING='${{ steps.trending.outputs.trending }}'
+          TOP_COINS='${{ steps.top_coins.outputs.top_coins }}'
+
+          # Write combined JSON
+          python3 - <<'PYEOF'
+          import json, os, sys
+          from datetime import datetime, timezone
+
+          timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+          def safe_json(s, fallback):
+              try:
+                  return json.loads(s)
+              except Exception:
+                  return fallback
+
+          fear_greed_raw = safe_json(os.environ.get("FEAR_GREED", "{}"), {"data": []})
+          trending_raw   = safe_json(os.environ.get("TRENDING", "{}"), {"coins": []})
+          top_coins_raw  = safe_json(os.environ.get("TOP_COINS", "[]"), [])
+
+          # Fear & Greed
+          fg_entry = (fear_greed_raw.get("data") or [{}])[0]
+          fear_greed = {
+              "value": int(fg_entry.get("value", 50)),
+              "classification": fg_entry.get("value_classification", "Neutral"),
+          }
+
+          # Trending coins (top 7)
+          trending_coins = []
+          for item in (trending_raw.get("coins") or [])[:7]:
+              c = item.get("item", {})
+              trending_coins.append({
+                  "id":     c.get("id", ""),
+                  "name":   c.get("name", ""),
+                  "symbol": c.get("symbol", "").upper(),
+                  "rank":   c.get("market_cap_rank"),
+                  "thumb":  c.get("thumb", ""),
+                  "price_btc": c.get("price_btc", 0),
+              })
+
+          # Top 10 coins
+          top_coins = []
+          for c in (top_coins_raw or [])[:10]:
+              top_coins.append({
+                  "id":     c.get("id", ""),
+                  "symbol": c.get("symbol", "").upper(),
+                  "name":   c.get("name", ""),
+                  "price_usd":        round(c.get("current_price") or 0, 6),
+                  "market_cap_usd":   c.get("market_cap") or 0,
+                  "change_24h":       round(c.get("price_change_percentage_24h") or 0, 2),
+                  "image":            c.get("image", ""),
+              })
+
+          output = {
+              "last_updated": timestamp,
+              "fear_greed":   fear_greed,
+              "trending":     trending_coins,
+              "top_coins":    top_coins,
+          }
+
+          os.makedirs("data", exist_ok=True)
+          with open("data/market-data.json", "w", encoding="utf-8") as f:
+              json.dump(output, f, ensure_ascii=False, indent=2)
+          print(f"Written data/market-data.json at {timestamp}")
+          PYEOF
+        env:
+          FEAR_GREED: '${{ steps.fear_greed.outputs.fear_greed }}'
+          TRENDING: '${{ steps.trending.outputs.trending }}'
+          TOP_COINS: '${{ steps.top_coins.outputs.top_coins }}'
+
+      - name: Commit & push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/market-data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(data): daily market data update $(date -u +'%Y-%m-%d')"
+            git push
+          fi
