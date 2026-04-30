@@ -55,6 +55,28 @@
   </section>
 
   <!-- ==============================
+       MARKET DATA BANNER
+       ============================== -->
+  <div class="market-banner" id="market-banner" aria-label="Aktuelle Marktdaten" style="display:none">
+    <div class="market-banner-inner">
+      <div class="market-item fear-greed-wrap">
+        <span class="market-label">Fear &amp; Greed</span>
+        <span class="fear-greed-badge" id="fg-badge">–</span>
+      </div>
+      <div class="market-divider" aria-hidden="true"></div>
+      <div class="market-item trending-wrap">
+        <span class="market-label">🔥 Trending</span>
+        <span class="trending-coins" id="trending-coins">–</span>
+      </div>
+      <div class="market-divider" aria-hidden="true"></div>
+      <div class="market-item updated-wrap">
+        <span class="market-label">🕐 Stand</span>
+        <span id="market-updated">–</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
        ANALYZER PANEL
        ============================== -->
   <main class="analyzer-panel">
@@ -150,6 +172,7 @@
   <!-- Scripts -->
   <script src="js/analyzer.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/market.js"></script>
 
 </body>
 </html>
