@@ -23,7 +23,11 @@ jobs:
         run: |
           echo "Fetching Fear & Greed Index..."
           FEAR_GREED=$(curl -sf "https://api.alternative.me/fng/?limit=1&format=json" || echo '{"data":[{"value":"50","value_classification":"Neutral","timestamp":"0"}]}')
-          echo "fear_greed=$FEAR_GREED" >> "$GITHUB_OUTPUT"
+          {
+            echo "fear_greed<<EOF"
+            echo "$FEAR_GREED"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Fetch CoinGecko trending coins
         id: trending
@@ -33,7 +37,11 @@ jobs:
             -H "Accept: application/json" \
             "https://api.coingecko.com/api/v3/search/trending" \
             || echo '{"coins":[]}')
-          echo "trending=$TRENDING" >> "$GITHUB_OUTPUT"
+          {
+            echo "trending<<EOF"
+            echo "$TRENDING"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Fetch top coins by market cap
         id: top_coins
@@ -43,7 +51,11 @@ jobs:
             -H "Accept: application/json" \
             "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h" \
             || echo '[]')
-          echo "top_coins=$TOP_COINS" >> "$GITHUB_OUTPUT"
+          {
+            echo "top_coins<<EOF"
+            echo "$TOP_COINS"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Build market-data.json
         run: |
