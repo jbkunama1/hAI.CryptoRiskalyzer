@@ -59,12 +59,6 @@ jobs:
 
       - name: Build market-data.json
         run: |
-          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-          FEAR_GREED='${{ steps.fear_greed.outputs.fear_greed }}'
-          TRENDING='${{ steps.trending.outputs.trending }}'
-          TOP_COINS='${{ steps.top_coins.outputs.top_coins }}'
-
           # Write combined JSON
           python3 - <<'PYEOF'
           import json, os, sys
