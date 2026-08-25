@@ -1,0 +1,16 @@
+name: App Integrations
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  integrations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: coderabbit/action@v1
+      - uses: testdriveai/action@v1
+      - uses: depfu/action@v1
+      - uses: ranger/action@v1
+      - uses: gitbook/action@v1
