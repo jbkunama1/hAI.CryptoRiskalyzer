@@ -1,0 +1,19 @@
+name: TruffleHog Scan
+on:
+  push:
+    paths:
+      - '**/*'
+  pull_request:
+    paths:
+      - '**/*'
+jobs:
+  trufflehog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: TruffleHog Scan
+        uses: trufflesecurity/trufflehog@v3
+        with:
+          scan: .
+          exclude: .git
+          regex: true
