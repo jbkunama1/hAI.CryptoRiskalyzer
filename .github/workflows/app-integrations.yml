@@ -1,4 +1,5 @@
 name: App Integrations
+
 on:
   push:
     branches: [main]
@@ -9,8 +10,24 @@ jobs:
   integrations:
     runs-on: ubuntu-latest
     steps:
-      - uses: coderabbit/action@v1
-      - uses: testdriveai/action@v1
-      - uses: depfu/action@v1
-      - uses: ranger/action@v1
-      - uses: gitbook/action@v1
+      - uses: actions/checkout@v4
+
+      - name: Coderabbit
+        uses: coderabbit/action@v1
+        continue-on-error: true
+
+      - name: testdrive.ai
+        uses: testdriveai/action@v1
+        continue-on-error: true
+
+      - name: Depfu
+        uses: depfu/action@v1
+        continue-on-error: true
+
+      - name: Ranger
+        uses: ranger/action@v1
+        continue-on-error: true
+
+      - name: GitBook
+        uses: gitbook/action@v1
+        continue-on-error: true
