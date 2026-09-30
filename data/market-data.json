@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-29T12:33:35Z",
+  "last_updated": "2026-09-30T12:19:25Z",
   "fear_greed": {
-    "value": 73,
+    "value": 71,
     "classification": "Greed"
   },
   "trending": [
@@ -9,17 +9,9 @@
       "id": "quant-network",
       "name": "Quant",
       "symbol": "QNT",
-      "rank": 33,
+      "rank": 30,
       "thumb": "https://coin-images.coingecko.com/coins/images/3370/standard/5ZOu7brX_400x400.jpg?1696504070",
-      "price_btc": 0.0030278397571592117
-    },
-    {
-      "id": "pump-fun",
-      "name": "Pump.fun",
-      "symbol": "PUMP",
-      "rank": 42,
-      "thumb": "https://coin-images.coingecko.com/coins/images/67164/standard/pump.jpg?1751949376",
-      "price_btc": 6.658028602988079e-08
+      "price_btc": 0.0037734573744737624
     },
     {
       "id": "near",
@@ -27,40 +19,139 @@
       "symbol": "NEAR",
       "rank": 21,
       "thumb": "https://coin-images.coingecko.com/coins/images/10365/standard/near.jpg?1696510367",
-      "price_btc": 5.767874863350757e-05
+      "price_btc": 6.335878439062801e-05
     },
     {
-      "id": "aave",
-      "name": "Aave",
-      "symbol": "AAVE",
-      "rank": 41,
-      "thumb": "https://coin-images.coingecko.com/coins/images/12645/standard/aave-token-round.png?1720472354",
-      "price_btc": 0.002054492675849541
+      "id": "moonriver",
+      "name": "Moonriver",
+      "symbol": "MOVR",
+      "rank": 895,
+      "thumb": "https://coin-images.coingecko.com/coins/images/17984/standard/Moonriver_MOVR_ICON.png?1716647589",
+      "price_btc": 1.901588219512309e-05
+    },
+    {
+      "id": "official-trump",
+      "name": "Official Trump",
+      "symbol": "TRUMP",
+      "rank": 108,
+      "thumb": "https://coin-images.coingecko.com/coins/images/53746/standard/trump.png?1737171561",
+      "price_btc": 2.4616078132223913e-05
+    },
+    {
+      "id": "lighter",
+      "name": "Lighter",
+      "symbol": "LIT",
+      "rank": 82,
+      "thumb": "https://coin-images.coingecko.com/coins/images/71121/standard/lighter.png?1765888098",
+      "price_btc": 4.65891958040451e-05
     },
     {
       "id": "pudgy-penguins",
       "name": "Pudgy Penguins",
       "symbol": "PENGU",
-      "rank": 102,
+      "rank": 100,
       "thumb": "https://coin-images.coingecko.com/coins/images/52622/standard/PUDGY_PENGUINS_PENGU_PFP.png?1733809110",
-      "price_btc": 1.1750804465259134e-07
+      "price_btc": 1.2019823903349422e-07
     },
     {
-      "id": "avalanche-2",
-      "name": "Avalanche",
-      "symbol": "AVAX",
-      "rank": 25,
-      "thumb": "https://coin-images.coingecko.com/coins/images/12559/standard/Avalanche_Circle_RedWhite_Trans.png?1696512369",
-      "price_btc": 0.0001396465228787699
-    },
-    {
-      "id": "hedera-hashgraph",
-      "name": "Hedera",
-      "symbol": "HBAR",
-      "rank": 27,
-      "thumb": "https://coin-images.coingecko.com/coins/images/3688/standard/hbar.png?1696504364",
-      "price_btc": 1.3929420192711438e-06
+      "id": "grass",
+      "name": "Grass",
+      "symbol": "GRASS",
+      "rank": 116,
+      "thumb": "https://coin-images.coingecko.com/coins/images/40094/standard/Grass.jpg?1725697048",
+      "price_btc": 8.591281545143772e-06
     }
   ],
-  "top_coins": []
+  "top_coins": [
+    {
+      "id": "bitcoin",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "price_usd": 83757,
+      "market_cap_usd": 1682759070025,
+      "change_24h": -0.76,
+      "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"
+    },
+    {
+      "id": "ethereum",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "price_usd": 2693.93,
+      "market_cap_usd": 328909722773,
+      "change_24h": -1.74,
+      "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628"
+    },
+    {
+      "id": "tether",
+      "symbol": "USDT",
+      "name": "Tether",
+      "price_usd": 0.999595,
+      "market_cap_usd": 183796060105,
+      "change_24h": -0.03,
+      "image": "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661"
+    },
+    {
+      "id": "binancecoin",
+      "symbol": "BNB",
+      "name": "BNB",
+      "price_usd": 768.48,
+      "market_cap_usd": 102330019217,
+      "change_24h": 0.21,
+      "image": "https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970"
+    },
+    {
+      "id": "ripple",
+      "symbol": "XRP",
+      "name": "XRP",
+      "price_usd": 1.51,
+      "market_cap_usd": 95212453545,
+      "change_24h": -0.62,
+      "image": "https://coin-images.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1696501442"
+    },
+    {
+      "id": "usd-coin",
+      "symbol": "USDC",
+      "name": "USDC",
+      "price_usd": 0.999783,
+      "market_cap_usd": 74335561576,
+      "change_24h": -0.02,
+      "image": "https://coin-images.coingecko.com/coins/images/6319/large/USDC.png?1769615602"
+    },
+    {
+      "id": "solana",
+      "symbol": "SOL",
+      "name": "Solana",
+      "price_usd": 119.54,
+      "market_cap_usd": 70291469750,
+      "change_24h": -0.67,
+      "image": "https://coin-images.coingecko.com/coins/images/4128/large/solana.png?1718769756"
+    },
+    {
+      "id": "tron",
+      "symbol": "TRX",
+      "name": "TRON",
+      "price_usd": 0.339739,
+      "market_cap_usd": 32266930340,
+      "change_24h": 1.2,
+      "image": "https://coin-images.coingecko.com/coins/images/1094/large/photo_2026-04-13_09-59-16.png?1776048311"
+    },
+    {
+      "id": "zcash",
+      "symbol": "ZEC",
+      "name": "Zcash",
+      "price_usd": 1426.92,
+      "market_cap_usd": 24200707425,
+      "change_24h": -1.64,
+      "image": "https://coin-images.coingecko.com/coins/images/486/large/Brandmark-Yellow_%281%29.png?1785810558"
+    },
+    {
+      "id": "figure-heloc",
+      "symbol": "FIGR_HELOC",
+      "name": "Figure Heloc",
+      "price_usd": 1.03,
+      "market_cap_usd": 23957356604,
+      "change_24h": 2.74,
+      "image": "https://coin-images.coingecko.com/coins/images/68480/large/figure.png?1755863954"
+    }
+  ]
 }
