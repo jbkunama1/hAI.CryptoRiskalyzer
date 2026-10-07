@@ -1,25 +1,17 @@
 {
-  "last_updated": "2026-10-06T13:09:17Z",
+  "last_updated": "2026-10-07T13:04:37Z",
   "fear_greed": {
-    "value": 73,
+    "value": 71,
     "classification": "Greed"
   },
   "trending": [
     {
-      "id": "iexec-rlc",
-      "name": "iExec RLC",
-      "symbol": "RLC",
-      "rank": 356,
-      "thumb": "https://coin-images.coingecko.com/coins/images/646/standard/pL1VuXm.png?1696501840",
-      "price_btc": 1.0230437415063335e-05
-    },
-    {
-      "id": "numeraire",
-      "name": "Numeraire",
-      "symbol": "NMR",
-      "rank": 262,
-      "thumb": "https://coin-images.coingecko.com/coins/images/752/standard/numeraire.png?1696501906",
-      "price_btc": 0.0001996813069904279
+      "id": "pearl-2",
+      "name": "Pearl",
+      "symbol": "PRL",
+      "rank": 124,
+      "thumb": "https://coin-images.coingecko.com/coins/images/102173580/standard/pearl.png?1780324634",
+      "price_btc": 1.5236045514726903e-05
     },
     {
       "id": "near",
@@ -27,39 +19,47 @@
       "symbol": "NEAR",
       "rank": 21,
       "thumb": "https://coin-images.coingecko.com/coins/images/10365/standard/near.jpg?1696510367",
-      "price_btc": 5.988197007453449e-05
+      "price_btc": 6.148285015216987e-05
     },
     {
-      "id": "ether-fi",
-      "name": "Ether.fi",
-      "symbol": "ETHFI",
-      "rank": 91,
-      "thumb": "https://coin-images.coingecko.com/coins/images/35958/standard/etherfi.jpeg?1710254562",
-      "price_btc": 9.11569900733947e-06
+      "id": "quantus",
+      "name": "Quantus",
+      "symbol": "QTC",
+      "rank": 734,
+      "thumb": "https://coin-images.coingecko.com/coins/images/102171910/standard/Token_Icon.png?1791345433",
+      "price_btc": 0.00121946418743582
     },
     {
-      "id": "ethena",
-      "name": "Ethena",
-      "symbol": "ENA",
-      "rank": 39,
-      "thumb": "https://coin-images.coingecko.com/coins/images/36530/standard/ethena.png?1711701436",
-      "price_btc": 2.7837699381178065e-06
+      "id": "bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "rank": 1,
+      "thumb": "https://coin-images.coingecko.com/coins/images/1/standard/bitcoin.png?1696501400",
+      "price_btc": 1.000101304576319
     },
     {
-      "id": "layerzero",
-      "name": "LayerZero",
-      "symbol": "ZRO",
-      "rank": 85,
-      "thumb": "https://coin-images.coingecko.com/coins/images/28206/standard/ftxG9_TJ_400x400.jpeg?1696527208",
-      "price_btc": 2.544312964090567e-05
+      "id": "quant-network",
+      "name": "Quant",
+      "symbol": "QNT",
+      "rank": 33,
+      "thumb": "https://coin-images.coingecko.com/coins/images/3370/standard/5ZOu7brX_400x400.jpg?1696504070",
+      "price_btc": 0.002914457972143438
     },
     {
-      "id": "okb",
-      "name": "OKB",
-      "symbol": "OKB",
-      "rank": 43,
-      "thumb": "https://coin-images.coingecko.com/coins/images/4463/standard/WeChat_Image_20220118095654.png?1696505053",
-      "price_btc": 0.0015657684291145505
+      "id": "sui",
+      "name": "Sui",
+      "symbol": "SUI",
+      "rank": 28,
+      "thumb": "https://coin-images.coingecko.com/coins/images/26375/standard/sui-ocean-square.png?1727791290",
+      "price_btc": 1.3460494321373505e-05
+    },
+    {
+      "id": "raydium",
+      "name": "Raydium",
+      "symbol": "RAY",
+      "rank": 100,
+      "thumb": "https://coin-images.coingecko.com/coins/images/13928/standard/PSigc4ie_400x400.jpg?1696513668",
+      "price_btc": 2.9282009811513566e-05
     }
   ],
   "top_coins": [
@@ -67,53 +67,53 @@
       "id": "bitcoin",
       "symbol": "BTC",
       "name": "Bitcoin",
-      "price_usd": 86164,
-      "market_cap_usd": 1731574884840,
-      "change_24h": 0.13,
+      "price_usd": 83457,
+      "market_cap_usd": 1677041393470,
+      "change_24h": -3.14,
       "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"
     },
     {
       "id": "ethereum",
       "symbol": "ETH",
       "name": "Ethereum",
-      "price_usd": 2713.52,
-      "market_cap_usd": 331410462039,
-      "change_24h": -0.14,
+      "price_usd": 2569.89,
+      "market_cap_usd": 313828843320,
+      "change_24h": -5.3,
       "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628"
     },
     {
       "id": "tether",
       "symbol": "USDT",
       "name": "Tether",
-      "price_usd": 0.99989,
-      "market_cap_usd": 184071961360,
-      "change_24h": 0.01,
+      "price_usd": 0.999809,
+      "market_cap_usd": 184052254401,
+      "change_24h": -0.01,
       "image": "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661"
     },
     {
       "id": "binancecoin",
       "symbol": "BNB",
       "name": "BNB",
-      "price_usd": 784.97,
-      "market_cap_usd": 104544733403,
-      "change_24h": -0.68,
+      "price_usd": 767.04,
+      "market_cap_usd": 102135699927,
+      "change_24h": -2.31,
       "image": "https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970"
     },
     {
       "id": "ripple",
       "symbol": "XRP",
       "name": "XRP",
-      "price_usd": 1.51,
-      "market_cap_usd": 95234329709,
-      "change_24h": -0.3,
+      "price_usd": 1.45,
+      "market_cap_usd": 91171674506,
+      "change_24h": -4.31,
       "image": "https://coin-images.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1696501442"
     },
     {
       "id": "usd-coin",
       "symbol": "USDC",
       "name": "USDC",
-      "price_usd": 0.999908,
-      "market_cap_usd": 74106298177,
+      "price_usd": 0.999858,
+      "market_cap_usd": 74063425649,
       "change_24h": -0.01,
       "image": "https://coin-images.coingecko.com/coins/images/6319/large/USDC.png?1769615602"
     },
@@ -121,36 +121,36 @@
       "id": "solana",
       "symbol": "SOL",
       "name": "Solana",
-      "price_usd": 120.3,
-      "market_cap_usd": 70791348498,
-      "change_24h": -0.19,
+      "price_usd": 116.37,
+      "market_cap_usd": 68555469827,
+      "change_24h": -3.27,
       "image": "https://coin-images.coingecko.com/coins/images/4128/large/solana.png?1718769756"
     },
     {
       "id": "tron",
       "symbol": "TRX",
       "name": "TRON",
-      "price_usd": 0.335215,
-      "market_cap_usd": 31844270049,
-      "change_24h": -0.3,
+      "price_usd": 0.333977,
+      "market_cap_usd": 31723618100,
+      "change_24h": -0.39,
       "image": "https://coin-images.coingecko.com/coins/images/1094/large/photo_2026-04-13_09-59-16.png?1776048311"
     },
     {
       "id": "figure-heloc",
       "symbol": "FIGR_HELOC",
       "name": "Figure Heloc",
-      "price_usd": 1.033,
-      "market_cap_usd": 24271811847,
-      "change_24h": 0,
+      "price_usd": 1.038,
+      "market_cap_usd": 24448628924,
+      "change_24h": 0.52,
       "image": "https://coin-images.coingecko.com/coins/images/68480/large/figure.png?1755863954"
     },
     {
       "id": "zcash",
       "symbol": "ZEC",
       "name": "Zcash",
-      "price_usd": 1371.63,
-      "market_cap_usd": 23275673490,
-      "change_24h": 3.2,
+      "price_usd": 1320.06,
+      "market_cap_usd": 22393600598,
+      "change_24h": -3.64,
       "image": "https://coin-images.coingecko.com/coins/images/486/large/Brandmark-Yellow_%281%29.png?1785810558"
     }
   ]
